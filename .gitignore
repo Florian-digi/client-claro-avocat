@@ -1,0 +1,10 @@
+# Ce repo est PUBLIC (client-claro-avocat) — ne contient que le site déployé.
+# Les notes internes restent uniquement dans le monorepo privé local.
+Contexte.md
+Contexte/
+Data/
+wp-Copywriting/
+wp-MediaBuying/
+ancienne version.html
+assets/images/*.png
+assets/images/prompts.json
