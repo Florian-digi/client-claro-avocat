@@ -54,19 +54,4 @@
       contactForm.classList.add('is-submitted');
     });
   }
-
-  // Newsletter — même logique de maquette.
-  var newsletterForm = document.getElementById('newsletter-form');
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var input = document.getElementById('nl-email');
-      if (!newsletterForm.checkValidity()) {
-        newsletterForm.reportValidity();
-        return;
-      }
-      input.value = '';
-      input.placeholder = 'Merci, à bientôt !';
-    });
-  }
 })();

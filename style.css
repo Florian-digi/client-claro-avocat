@@ -858,49 +858,19 @@ h1, h2, h3, h4 { font-weight: 600; text-wrap: balance; }
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  grid-template-columns: 1.4fr 1fr 1fr;
   gap: 48px;
   padding-bottom: 56px;
 }
 .footer-brand .brand { margin-bottom: 16px; }
 .footer-brand p { font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.6; max-width: 32ch; margin-bottom: 8px; }
-.footer-brand address { font-style: normal; font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 20px; }
-.social-links { display: flex; gap: 12px; }
-.social-links a {
-  width: 36px; height: 36px;
-  display: flex; align-items: center; justify-content: center;
-  border: 1px solid var(--color-border);
-  border-radius: 50%;
-  transition: border-color 0.15s ease, color 0.15s ease;
-}
-.social-links a:hover { border-color: var(--color-accent); color: var(--color-accent); }
-.social-links svg { width: 16px; height: 16px; }
+.footer-brand address { font-style: normal; font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 4px; }
+.footer-contact-line { font-size: 0.85rem; color: var(--color-text-muted); }
 
 .footer-col h4 { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 20px; }
 .footer-col ul { display: flex; flex-direction: column; gap: 12px; }
 .footer-col a, .footer-col address { font-size: 0.88rem; color: var(--color-text-secondary); font-style: normal; }
 .footer-col a:hover { color: var(--color-accent); }
-
-.footer-newsletter p { font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 16px; line-height: 1.5; }
-.newsletter-form { display: flex; gap: 8px; }
-.newsletter-form input {
-  flex: 1;
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: 12px 14px;
-  font-size: 0.85rem;
-  color: var(--color-text-primary);
-}
-.newsletter-form button {
-  width: 44px;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--color-accent);
-  border-radius: var(--radius-sm);
-  color: var(--color-on-accent);
-}
-.newsletter-form button svg { width: 18px; height: 18px; }
-.newsletter-note { font-size: 0.72rem; color: var(--color-text-muted); margin-top: 10px; display: block; }
 
 .footer-bottom {
   border-top: 1px solid var(--color-border);
