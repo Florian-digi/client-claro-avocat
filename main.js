@@ -7,15 +7,19 @@
   // Mobile nav toggle
   var nav = document.getElementById('site-nav');
   var toggle = document.getElementById('nav-toggle');
+  var toggleLabel = toggle ? toggle.querySelector('.visually-hidden') : null;
+  function setNavOpen(isOpen) {
+    nav.classList.toggle('is-open', isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    if (toggleLabel) toggleLabel.textContent = isOpen ? 'Fermer le menu' : 'Ouvrir le menu';
+  }
   if (nav && toggle) {
     toggle.addEventListener('click', function () {
-      var isOpen = nav.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', String(isOpen));
+      setNavOpen(!nav.classList.contains('is-open'));
     });
     nav.querySelectorAll('.nav-links a').forEach(function (link) {
       link.addEventListener('click', function () {
-        nav.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
+        setNavOpen(false);
       });
     });
   }
