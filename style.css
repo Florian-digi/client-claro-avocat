@@ -301,6 +301,19 @@ h1, h2, h3, h4 { font-weight: 600; text-wrap: balance; }
 .hero .cta-row .secondary-link { font-size: 0.85rem; color: var(--color-text-secondary); }
 .hero .cta-row .secondary-link:hover { color: var(--color-accent); }
 
+.rating-badge {
+  margin-top: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+.rating-badge .stars { display: inline-flex; gap: 2px; }
+.rating-badge .stars svg { width: 14px; height: 14px; color: var(--color-accent); fill: var(--color-accent); }
+.rating-badge-lg { font-size: 0.95rem; color: var(--color-text-primary); font-weight: 600; }
+.rating-badge-lg .stars svg { width: 16px; height: 16px; }
+
 /* Feature bar — overlaps hero bottom edge */
 .feature-bar {
   position: relative;
@@ -340,6 +353,45 @@ h1, h2, h3, h4 { font-weight: 600; text-wrap: balance; }
   .feature-bar .container { grid-template-columns: 1fr 1fr; gap: 32px 0; border-radius: var(--radius-sm); }
   .feature-item { border-left: none; }
   .feature-item:nth-child(2n) { border-left: 1px solid var(--color-border); }
+}
+
+/* ==========================================================================
+   Personas — Qui est concerné
+   ========================================================================== */
+.personas { padding: 96px 0; border-top: 1px solid var(--color-border); }
+.personas .section-head { display: block; text-align: center; max-width: 640px; margin-inline: auto; }
+.personas .section-head h2 { max-width: none; }
+
+.personas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.persona-card {
+  display: block;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 28px 22px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.persona-card:hover { border-color: var(--color-accent-dark); transform: translateY(-4px); }
+.persona-card .icon-frame {
+  width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+}
+.persona-card .icon-frame svg { width: 22px; height: 22px; color: var(--color-accent); }
+.persona-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+.persona-card p { font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.55; }
+
+@media (max-width: 1080px) {
+  .personas-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .personas-grid { grid-template-columns: 1fr; }
 }
 
 /* ==========================================================================
@@ -515,6 +567,73 @@ h1, h2, h3, h4 { font-weight: 600; text-wrap: balance; }
 .avocat-info .role { font-style: italic; font-size: 0.9rem; opacity: 0.85; }
 
 /* ==========================================================================
+   Comparatif — Avocat choisi vs commis d'office
+   ========================================================================== */
+.comparatif { padding: 96px 0; border-top: 1px solid var(--color-border); }
+.comparatif .section-head { display: block; text-align: center; max-width: 640px; margin-inline: auto; margin-bottom: 48px; }
+.comparatif .section-head h2 { max-width: none; }
+
+.comparatif-table {
+  max-width: 900px;
+  margin-inline: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.comparatif-row {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1.3fr;
+  border-top: 1px solid var(--color-border);
+}
+.comparatif-row:first-child { border-top: none; }
+.comparatif-row > div {
+  padding: 18px 20px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+.comparatif-row > div:first-child { font-weight: 600; color: var(--color-text-primary); }
+.comparatif-row > div.is-highlight { background: var(--color-bg-elevated); color: var(--color-text-primary); font-weight: 500; }
+.comparatif-head { background: var(--color-bg-elevated-2); }
+.comparatif-head > div { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-text-secondary); }
+.comparatif-head > div.is-highlight { color: var(--color-accent); background: transparent; }
+.comparatif-note { max-width: 60ch; margin: 28px auto 0; text-align: center; font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6; }
+
+@media (max-width: 700px) {
+  .comparatif-row { grid-template-columns: 1fr; }
+  .comparatif-row > div:first-child { padding-bottom: 4px; color: var(--color-text-muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .comparatif-head { display: none; }
+}
+
+/* ==========================================================================
+   Preuve sociale — Avis & témoignage
+   ========================================================================== */
+.temoignages { padding: 96px 0; border-top: 1px solid var(--color-border); }
+.temoignages .section-head { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px; max-width: 640px; margin: 0 auto 48px; }
+.temoignages .section-head h2 { max-width: none; }
+
+.temoignage-card {
+  max-width: 720px;
+  margin-inline: auto;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 40px;
+  text-align: center;
+}
+.temoignage-card .stars { display: inline-flex; gap: 3px; margin-bottom: 20px; }
+.temoignage-card .stars svg { width: 18px; height: 18px; color: var(--color-accent); fill: var(--color-accent); }
+.temoignage-card p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: var(--color-text-primary);
+  margin-bottom: 20px;
+}
+.temoignage-card .temoignage-source { font-size: 0.82rem; color: var(--color-text-muted); }
+
+/* ==========================================================================
    Domaines
    ========================================================================== */
 .domaines { padding: 96px 0; border-top: 1px solid var(--color-border); }
@@ -638,6 +757,35 @@ h1, h2, h3, h4 { font-weight: 600; text-wrap: balance; }
   .stats-bar li:nth-child(2n) { border-left: 1px solid var(--color-border); }
   .resultats-media img { height: 380px; }
 }
+
+/* ==========================================================================
+   FAQ
+   ========================================================================== */
+.faq { padding: 96px 0; border-top: 1px solid var(--color-border); }
+.faq .section-head { display: block; text-align: center; max-width: 640px; margin-inline: auto; margin-bottom: 48px; }
+.faq .section-head h2 { max-width: none; }
+
+.faq-list { max-width: 760px; margin-inline: auto; display: flex; flex-direction: column; gap: 12px; }
+.faq-list details {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 20px 24px;
+}
+.faq-list summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary svg { width: 18px; height: 18px; color: var(--color-accent); flex-shrink: 0; transition: transform 0.2s ease; }
+.faq-list details[open] summary svg { transform: rotate(180deg); }
+.faq-list details p { margin-top: 16px; font-size: 0.9rem; color: var(--color-text-secondary); line-height: 1.65; }
 
 /* ==========================================================================
    CTA / Contact
