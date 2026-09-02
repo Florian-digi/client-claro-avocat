@@ -582,7 +582,7 @@ h1, h2, h3, h4 { font-weight: 600; text-wrap: balance; }
   letter-spacing: 0.02em;
   margin-bottom: 6px;
 }
-.avocat-info .role { font-style: italic; font-size: 0.9rem; opacity: 0.85; }
+.avocat-info .role { font-style: italic; font-size: 0.9rem; color: #3A3D47; }
 
 /* ==========================================================================
    Comparatif — Avocat choisi vs commis d'office
